@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.CoursesController"
+            styleClass="page">
+
+    <left>
+        <VBox spacing="16" styleClass="sidebar" prefWidth="240">
+            <Label text="EduPro" styleClass="brand big"/>
+            <Separator/>
+
+            <Button text="🏠 Главная"  styleClass="menu-btn" onAction="#goHome"/>
+            <Button text="📚 Курсы"    styleClass="menu-btn active" onAction="#goCourses"/>
+            <Button text="👤 Профиль"  styleClass="menu-btn" onAction="#goProfile"/>
+            <Button text="⚙ Настройки" styleClass="menu-btn" onAction="#goSettings"/>
+
+            <Pane VBox.vgrow="ALWAYS"/>
+            <Button text="🚪 Выйти" styleClass="menu-btn danger" onAction="#onLogout"/>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll">
+            <VBox spacing="18" styleClass="content">
+                <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+                <Label text="Все курсы" styleClass="h1"/>
+
+                <HBox spacing="20">
+                    <VBox spacing="10" styleClass="course-card">
+                        <Label text="Введение в Data Science" styleClass="course-title"/>
+                        <Label text="С финальной работой" styleClass="muted"/>
+                        <Button text="Открыть" styleClass="primary-btn" onAction="#openDS"/>
+                    </VBox>
+
+                    <VBox spacing="10" styleClass="course-card">
+                        <Label text="Java для начинающих" styleClass="course-title"/>
+                        <Label text="База + практика" styleClass="muted"/>
+                        <Button text="Открыть" styleClass="primary-btn" onAction="#openJava"/>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

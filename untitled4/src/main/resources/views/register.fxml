@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.RegisterController"
+            styleClass="root">
+
+    <children>
+        <VBox spacing="14" alignment="CENTER" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" styleClass="card">
+            <padding>
+                <Insets top="26" right="28" bottom="26" left="28"/>
+            </padding>
+
+            <Label text="Регистрация" styleClass="title"/>
+            <Label text="Создай новый аккаунт" styleClass="subtitle"/>
+
+            <TextField fx:id="usernameField" promptText="Логин" styleClass="field"/>
+            <PasswordField fx:id="passwordField" promptText="Пароль" styleClass="field"/>
+            <PasswordField fx:id="passwordField2" promptText="Повтори пароль" styleClass="field"/>
+
+            <Label fx:id="messageLabel" text="" styleClass="error"/>
+
+            <Button text="Зарегистрироваться" onAction="#onRegister" styleClass="btn-primary"/>
+            <Button text="Назад" onAction="#onBack" styleClass="btn-secondary"/>
+        </VBox>
+    </children>
+</AnchorPane>

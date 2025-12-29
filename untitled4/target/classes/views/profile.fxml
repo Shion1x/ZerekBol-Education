@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.ProfileController"
+            styleClass="page">
+
+    <left>
+        <VBox spacing="16" styleClass="sidebar" prefWidth="240">
+            <Label text="EduPro" styleClass="brand big"/>
+            <Separator/>
+            <Button text="🏠 Главная"  styleClass="menu-btn" onAction="#goHome"/>
+            <Button text="📚 Курсы"    styleClass="menu-btn" onAction="#goCourses"/>
+            <Button text="👤 Профиль"  styleClass="menu-btn active" onAction="#goProfile"/>
+            <Button text="⚙ Настройки" styleClass="menu-btn" onAction="#goSettings"/>
+            <Pane VBox.vgrow="ALWAYS"/>
+            <Button text="🚪 Выйти" styleClass="menu-btn danger" onAction="#onLogout"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="12" styleClass="content">
+            <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+            <Label text="Профиль" styleClass="h1"/>
+            <Label fx:id="userLabel" styleClass="muted"/>
+        </VBox>
+    </center>
+</BorderPane>

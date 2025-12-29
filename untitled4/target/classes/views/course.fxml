@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.CourseController"
+            styleClass="page">
+
+    <top>
+        <HBox spacing="12" styleClass="topbar" padding="16">
+            <Button text="← Назад" styleClass="ghost-btn" onAction="#onBack"/>
+            <VBox spacing="2">
+                <Label fx:id="courseTitleLabel" styleClass="h2"/>
+                <Label fx:id="courseMetaLabel" styleClass="muted"/>
+            </VBox>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Домой" styleClass="ghost-btn" onAction="#onHome"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll">
+            <VBox spacing="14" padding="20" styleClass="content">
+
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Label text="Уроки" styleClass="h2"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="progressLabel" styleClass="muted"/>
+                </HBox>
+
+                <!-- список уроков -->
+                <VBox fx:id="lessonsBox" spacing="10"/>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

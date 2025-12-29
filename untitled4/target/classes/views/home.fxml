@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.HomeController"
+            styleClass="page">
+
+    <left>
+        <VBox spacing="16" styleClass="sidebar" prefWidth="240">
+            <Label text="EduPro" styleClass="brand big"/>
+
+            <Separator/>
+
+            <Button text="🏠 Главная"  styleClass="menu-btn active" onAction="#goHome"/>
+            <Button text="📚 Курсы"    styleClass="menu-btn"        onAction="#goCourses"/>
+            <Button text="👤 Профиль"  styleClass="menu-btn"        onAction="#goProfile"/>
+            <Button text="⚙ Настройки" styleClass="menu-btn"        onAction="#goSettings"/>
+
+            <Pane VBox.vgrow="ALWAYS"/>
+
+            <Button text="🚪 Выйти" styleClass="menu-btn danger" onAction="#onLogout"/>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll">
+            <VBox spacing="24" styleClass="content">
+                <padding>
+                    <Insets top="30" right="30" bottom="30" left="30"/>
+                </padding>
+
+                <VBox spacing="6">
+                    <Label fx:id="helloLabel" styleClass="h1"/>
+                    <Label text="Сегодня отличный день, чтобы узнать новое и закрепить знания на практике."
+                           styleClass="muted"/>
+                </VBox>
+
+                <Label text="Ваши курсы" styleClass="h2"/>
+
+                <HBox spacing="20">
+                    <VBox spacing="12" styleClass="course-card">
+                        <Label text="Введение в Data Science" styleClass="course-title"/>
+                        <Label text="Пройдено: 5%" styleClass="muted"/>
+                        <ProgressBar progress="0.05"/>
+                        <Button text="Продолжить" styleClass="primary-btn" onAction="#openCourseDS"/>
+                    </VBox>
+
+                    <VBox spacing="12" styleClass="course-card">
+                        <Label text="Java для начинающих" styleClass="course-title"/>
+                        <Label text="Пройдено: 0%" styleClass="muted"/>
+                        <ProgressBar progress="0"/>
+                        <Button text="Начать" styleClass="primary-btn" onAction="#openCourseJava"/>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

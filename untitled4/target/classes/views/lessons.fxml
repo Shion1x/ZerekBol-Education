@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.LessonsController"
+            styleClass="page">
+
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="topbar">
+            <Button text="← Назад" onAction="#onBack" styleClass="ghost-btn"/>
+            <Label fx:id="courseTitleLabel" text="Курс" styleClass="h2"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll">
+            <VBox spacing="12">
+                <padding>
+                    <Insets top="24" right="24" bottom="24" left="24"/>
+                </padding>
+
+                <Label text="Уроки" styleClass="h2"/>
+                <VBox fx:id="lessonsBox" spacing="10"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
